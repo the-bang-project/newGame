@@ -14,5 +14,20 @@ class Controls
   
   void caller()
   {
+    right();
+    left();
+    jump();
+  }
+  
+  void right()
+  {
+  }
+  
+  void left()
+  {
+  }
+  
+  void jump()
+  {
   }
 }
