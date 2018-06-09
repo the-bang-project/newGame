@@ -9,8 +9,8 @@ class Controls
   float jumpEnd = (displayWidth/3)*2;
   
   // Go right zone;
-  float startRight = (displayWidth/3)*2;
-  float endRight = displayWidth;
+  float rightStart = (displayWidth/3)*2;
+  float rightEnd = displayWidth;
   
   void caller()
   {
@@ -21,7 +21,7 @@ class Controls
   
   void right()
   {
-    if(mousePressed == true && mouseX < endRight && mouseX > startRight) {
+    if(mousePressed == true && mouseX < rightEnd && mouseX > rightStart) {
       p.x += displayWidth/100;
     }
   }
