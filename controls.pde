@@ -35,5 +35,12 @@ class Controls
   
   void jump()
   {
+    if(mousePressed == true && mouseX < jumpEnd && mouseX > jumpStart) {
+      bounce();
+    }
+  }
+  
+  void bounce()
+  {
   }
 }
