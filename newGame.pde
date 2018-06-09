@@ -8,6 +8,8 @@ void setup()
   // Init.
   p = new Player();
   g = new Ground();
+  // Misc.
+  orientation(PORTRAIT);
 }
 
 void draw()
