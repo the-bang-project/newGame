@@ -60,8 +60,21 @@ class Controls
         p.y -= bounce; //Bounce is added to Y.
         bounce -= bounceInc; //Bounce speed is decreased over time.
         if (bounce <= 0) { //If the bounce arc is over.
-          bounceUp = false; //Player is no longer bouncing.
+          bounce = 0;
+          bounceUp = false;
+          bounceDown = true;
+        }
+      }
+      if (bounceDown == true)
+      {
+        p.y += bounce; //Bounce is added to Y.
+        bounce += bounceInc; //Bounce speed is decreased over time.
+        if (bounce <= orgBounceInc) { //If the bounce arc is over.
+          bounceUp = false;
+          bounceDown = false;
+          bouncing = false;
           bounce = orgBounceInc; //Reset bounce value for next time.
+          p.y = (displayHeight/3)*2;
         }
       }
     }
