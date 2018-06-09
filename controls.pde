@@ -21,10 +21,16 @@ class Controls
   
   void right()
   {
+    if(mousePressed == true && mouseX < endRight && mouseX > startRight) {
+      p.x += displayWidth/100;
+    }
   }
   
   void left()
   {
+    if(mousePressed == true && mouseX < leftEnd && mouseX > leftStart) {
+      p.x -= displayWidth/100;
+    }
   }
   
   void jump()
