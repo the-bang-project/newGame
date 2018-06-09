@@ -1,0 +1,6 @@
+class Controls
+{
+  void caller()
+  {
+  }
+}
