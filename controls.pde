@@ -15,6 +15,11 @@ class Controls
   // Bouncing stuff.
   boolean bouncing = false;
   float bounce = displayHeight/50;
+  float orgBounceInc = displayHeight/50;
+  float bounceInc = displayHeight/50;
+
+  boolean bounceUp = false;
+  boolean bounceDown = false;
 
   void caller()
   {
@@ -42,20 +47,21 @@ class Controls
   {
     if (mousePressed == true && mouseX < jumpEnd && mouseX > jumpStart) {
       bouncing = true;
+      bounceUp = true;
     }
   }
 
   void bounce()
   {
-    if (bouncing == true)
+    if (bouncing == true) //If Player is in bouncing state.
     {
-      if (bouncing == true) //If Player is in bouncing state.
+      if (bounceUp == true)
       {
         p.y -= bounce; //Bounce is added to Y.
-        bounce -= displayHeight/500; //Bounce speed is decreased over time.
+        bounce -= bounceInc; //Bounce speed is decreased over time.
         if (bounce <= 0) { //If the bounce arc is over.
-          bouncing = false; //Player is no longer bouncing.
-          bounce = displayHeight/50; //Reset bounce value for next time.
+          bounceUp = false; //Player is no longer bouncing.
+          bounce = orgBounceInc; //Reset bounce value for next time.
         }
       }
     }
