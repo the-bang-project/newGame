@@ -13,6 +13,8 @@ class Ground
 
   void show()
   {
+    noStroke();
+    fill(#4CAF50);
     rectMode(CENTER);
     rect(x, y, w, h);
   }
